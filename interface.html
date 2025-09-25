@@ -1,0 +1,99 @@
+<?php
+session_start();
+include "connexion.php";
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="miseenpage.css">
+</head>
+
+<body>
+    <header>
+        <img src="BIENVENUE.gif" alt="image de bienvenue">
+    </header>
+
+    <div class="tout">
+        <div class="buto">
+            <a href="#connexion" class="l1">connexion</a>
+            <a href="#inscription" class="l2">inscription</a>
+        </div>
+        <div class="ensembl">
+
+
+            <div class="box1">
+                <p>« Bienvenue chez <mark>JOV-LIBRAIRIE</mark> ! Plongez dans <br>un univers où chaque livre raconte une
+                    histoire,<br> et où chaque page vous rapproche de la connaissance. »</p>
+                <img src="portrait-african-2.png" alt="bienevenu">
+            </div>
+
+            <div class="box2">
+                <img src="cafe-frankfurt-germany.JPG" alt="bienevenu">
+                <p>« Explorez notre collection : achetez vos livres préférés <br>, ajoutez-les à vos favoris, et
+                    préparez-vous à <br>
+                    découvrir des histoires inédites à lire quand vous voulez. »</p>
+            </div>
+        </div>
+        <div class="ensembl1">
+            <hr>
+            <div class="buto1">
+                <p>inscrivez-vous ou connectez-vous pour acceder à votre compte.</p>
+                <form id="recuperConnex" action="connexion.php" method="post" style="display: none" ;>
+                    <input type="email" name="email" placeholder="tapez votre mail correct:@" required;>
+                    <input type="password" name="password" placeholder="Saisi votre mot de passe" required;>
+                    <button type="submit"> connectez-vous</button>
+                </form>
+
+                <button onclick="faisVoir('connex')" method id="connexion" class="l1">connexion</button>
+
+                <form id="recuperinscri"  action="connexion.php" method="post" style="display: none" ;>
+                    <input type="text" name="username" placeholder="Nom" required;>
+                    <input type="text" name="username" placeholder="Prenoms" required;>
+                    <input type="email" name="email" placeholder="tapez votre mail correct:@" required;>
+                    <input type="password" name="password" placeholder="Saisi un mot de passe" required;>
+                    <input type="password" name="password2" placeholder="Repète le mot de passe" required;>
+                    <button type="submit"> je m'inscript ici</button>
+                </form>
+
+                <button onclick=" faisVoir('inscri')" id="inscription" class="l2">inscription</button>
+
+            </div>
+            <div>
+                <script type="text/javascript">
+                    function faisVoir(type) {
+                        let connex = document.getElementById("recuperConnex");
+                        let inscri = document.getElementById("recuperinscri");
+
+                        if (type === "connex") {
+                            connex.style.display = "block";
+                            inscri.style.display = "none";
+                        } else if (type === "inscri") {
+                            inscri.style.display = "block";
+                            connex.style.display = "none";
+                        }
+                    }
+                </script>
+
+            </div>
+            <hr>
+            <div class="box3">
+                <P>« Gérez votre bibliothèque personnelle : <mark>ajoutez, modifiez ou supprimez</mark> vos livres
+                    favoris,
+                    et empruntez facilement ceux <br> qui vous inspirent le plus. »</P>
+                <img src="medium-shot-student-searching-books.JPG" alt="CE QUI SE PASSERA">
+            </div>
+        </div>
+
+    </div>
+    <div class="butoe">
+        <a href="#connexion" class="l1">connexion</a>
+        <a href="#inscription" class="l2">inscription</a>
+    </div>
+</body>
+
+</html>
